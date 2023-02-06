@@ -1,0 +1,7 @@
+.photo {
+  margin: auto;
+  height: 36rem;
+  border-radius: .2rem;
+  background: white;
+  display: grid;
+}
