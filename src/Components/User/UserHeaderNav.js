@@ -1,16 +1,34 @@
 import React from 'react';
+import styles from './UserHeaderNav.module.css';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../UserContext';
+import { ReactComponent as MinhasFotos } from '../../Assets/feed.svg';
+import { ReactComponent as AdicionarFoto } from '../../Assets/adicionar.svg';
+import { ReactComponent as Sair } from '../../Assets/sair.svg';
+import { ReactComponent as Estatisticas } from '../../Assets/estatisticas.svg';
 
 const UserHeaderNav = () => {
+  const [mobile, setMobile] = React.useState(null);
   const { userLogout } = React.useContext(UserContext);
 
   return (
-    <nav>
-      <NavLink to="/conta">Minha Fotos</NavLink>
-      <NavLink to="/conta/estatisticas">Estátisticas</NavLink>
-      <NavLink to="/conta/postar">Adicionar Foto</NavLink>
-      <button onClick={userLogout}>Sair</button>
+    <nav className={styles.nav}>
+      <NavLink to="/conta" end>
+        <MinhasFotos />
+        {mobile && 'Minhas Fotos'}
+      </NavLink>
+      <NavLink to="/conta/estatisticas">
+        <Estatisticas />
+        {mobile && 'Estátisticas'}
+      </NavLink>
+      <NavLink to="/conta/postar">
+        <AdicionarFoto />
+        {mobile && 'Adicionar Foto'}
+      </NavLink>
+      <button onClick={userLogout}>
+        <Sair />
+        {mobile && 'Sair'}
+      </button>
     </nav>
   );
 };
