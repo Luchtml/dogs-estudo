@@ -20,7 +20,7 @@ const PhotoContent = ({ data, single }) => {
             {user.data && user.data.username === photo.author ? (
               <PhotoDelete id={photo.id} />
             ) : (
-              <Link to={`/perfil;${photo.author}`}>@{photo.author}</Link>
+              <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             )}
             <span className={styles.visualizacoes}>{photo.acessos}</span>
           </p>
@@ -33,7 +33,7 @@ const PhotoContent = ({ data, single }) => {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments singe={single} id={photo.id} comments={comments} />
     </div>
   );
 };
