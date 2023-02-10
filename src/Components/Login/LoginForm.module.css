@@ -5,7 +5,7 @@
 .perdeu {
   display: inline-block;
   color: #666;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   line-height: 1;
 }
 
@@ -19,6 +19,7 @@
 
 .cadastro {
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .cadastro p {
@@ -26,18 +27,17 @@
   margin-bottom: 2rem;
 }
 
-.subitle{
+.subitle {
   font-family: var(--type-second);
   line-height: 1;
   font-size: 2rem;
-
 }
 
 .subitle::after {
   content: '';
   display: block;
   background: #ddd;
-  height: .5rem;
+  height: 0.5rem;
   width: 3rem;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
